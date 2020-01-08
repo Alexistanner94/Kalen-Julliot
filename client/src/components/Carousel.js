@@ -7,7 +7,7 @@ function Carousel() {
       <Carousel.Item>
         <img
           className="d-block w-50"
-          src="https://vsco.co/zakaryjullot/media/589ba58301d0635226f03c38"
+          src="https://www.biography.com/.image/t_share/MTE5NTU2MzE2NDYyMTU1Mjc1/bill-murray-9542510-1-402.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
