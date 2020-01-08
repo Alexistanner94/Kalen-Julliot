@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./components/Navbar";
 import Container from "./components/Container";
 import Form from "./components/Form";
 import Gallery from "./components/Gallery";
