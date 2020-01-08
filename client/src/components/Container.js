@@ -9,12 +9,12 @@ function Container() {
             {" "}
             About{" "}
           </a>
-          <a class="navbar-brand" href="/Carousel">
+          <a class="navbar-brand" text="center" href="#">
             {" "}
             Gallery{" "}
           </a>
           <a class="navbar-brand" href="#">
-            {" "}
+            Show your Work!{" "}
           </a>
 
           <button
@@ -47,12 +47,13 @@ function Container() {
 
       <header class="masthead text-center text-white">
         <div class="masthead-content">
-          <div class="container"></div>
+          <div class="container">
+            <h1 class="masthead-heading mb-0">
+              Visual Arts of Kalen & Julliot
+            </h1>
+            {/* <h2 class="masthead-subheading mb-0"></h2> */}
+          </div>
         </div>
-        <div class="bg-circle-1 bg-circle"></div>
-        <div class="bg-circle-2 bg-circle"></div>
-        <div class="bg-circle-3 bg-circle"></div>
-        <div class="bg-circle-4 bg-circle"></div>
       </header>
 
       <section />
