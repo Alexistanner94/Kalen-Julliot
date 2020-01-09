@@ -43,8 +43,9 @@ export default class Login extends Component {
     };
 
     const loginResult = await LoginService(data);
+    console.log("loginResult", loginResult.data);
 
-    if (loginResult !== 200) {
+    if (loginResult.status !== 200) {
       this.setState({
         error: true,
         loginSuccess: false

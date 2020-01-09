@@ -25,7 +25,7 @@ let Post = new Schema(
       trim: true
     },
     image: {
-      type: File,
+      type: String,
       required: true,
       trim: true
     }
