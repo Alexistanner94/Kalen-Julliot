@@ -9,8 +9,8 @@ import "./App.css";
 function App() {
   return (
     <>
+     
       <Navbar />
-      <Container />
     </>
   );
 }

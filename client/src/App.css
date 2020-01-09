@@ -32,3 +32,22 @@
     transform: rotate(360deg);
   }
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+.Nav_link {
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-decoration: none;
+}

@@ -1,146 +1,119 @@
 import React from "react";
+import "./../App.css";
+import Home from "./Home.js";
+import Post from "./Post.js";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink
+} from "react-router-dom";
+import Registration from "./Registration";
+import Login from "./Login";
 
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
+
+function Dashboard() {
+  return (
+    <div>
+      <h2>Dashboard</h2>
+    </div>
+  );
+}
 function Container() {
   return (
     <div>
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            {" "}
-            About{" "}
-          </a>
-          <a class="navbar-brand" href="/Carousel">
-            {" "}
-            Gallery{" "}
-          </a>
-          <a class="navbar-brand" href="#">
-            {" "}
-          </a>
-
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Sign Up
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" scr="/Form">
-                  Log In
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <header class="masthead text-center text-white">
-        <div class="masthead-content">
-          <div class="container"></div>
-        </div>
-        <div class="bg-circle-1 bg-circle"></div>
-        <div class="bg-circle-2 bg-circle"></div>
-        <div class="bg-circle-3 bg-circle"></div>
-        <div class="bg-circle-4 bg-circle"></div>
-      </header>
-
-      <section />
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 order-lg-2">
-            <div class="p-5">
-              <img
-                class="img-fluid rounded-circle"
-                src="images/zak1.png"
-                alt=""
-              />
-            </div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <div text="center" style={{ marginTop: "0px" }}>
+            <h3
+              style={{
+                fontFamily: "cursive",
+                color: "white",
+                marginLeft: "80%",
+                width: "120%"
+              }}
+            >
+              {" "}
+              Studio Arts of Kalen & Julliot
+            </h3>
           </div>
-          <div class="col-lg-6 order-lg-1">
-            <div class="p-5">
-              <h2 class="display-4">Creativity takes courage </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                aliquid, mollitia odio veniam sit iste esse assumenda amet
-                aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-                voluptatum molestiae adipisci, beatae obcaecati.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section />
+        </nav>
+        <Router>
+          <div>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+              <ul>
+                <li>
+                  <NavLink className="Nav_link" to="/">
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="Nav_link" to="/about">
+                    About
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="Nav_link" to="/dashboard">
+                    Dashboard
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="Nav_link" to="/post">
+                    Post Arts
+                  </NavLink>
+                </li>
+                <li>
+                  <br></br>
+                  <NavLink className="Nav_link" to="/registration">
+                    SignUp
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="Nav_link" to="/login">
+                    Login
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
+            <hr />
 
-      <section>
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <div class="p-5">
-                <img
-                  class="img-fluid rounded-circle"
-                  src="images/zak2.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="p-5">
-                <h2 class="display-4">
-                  “Every child is an artist. The problem is how to remain an
-                  artist once we grow up.”
-                </h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                  aliquid, mollitia odio veniam sit iste esse assumenda amet
-                  aperiam exercitationem, ea animi blanditiis recusandae!
-                  Ratione voluptatum molestiae adipisci, beatae obcaecati.
-                </p>
-              </div>
-            </div>
+            {/*
+          A <Switch> looks through all its children <Route>
+          elements and renders the first one whose path
+          matches the current URL. Use a <Switch> any time
+          you have multiple routes, but you want only one
+          of them to render at a time
+        */}
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/dashboard">
+                <Dashboard />
+              </Route>
+              <Route path="/post">
+                <Post />
+              </Route>
+              <Route path="/signup">
+                <Registration />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+            </Switch>
           </div>
-        </div>
-      </section>
-
-      <section />
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 order-lg-2">
-            <div class="p-5">
-              <img
-                class="img-fluid rounded-circle"
-                src="images/zak3.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div class="col-lg-6 order-lg-1">
-            <div class="p-5">
-              <h2 class="display-4">
-                "Art enables us to find ourselves and lose ourselves at the same
-                time."
-              </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                aliquid, mollitia odio veniam sit iste esse assumenda amet
-                aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-                voluptatum molestiae adipisci, beatae obcaecati.
-              </p>
-            </div>
-          </div>
-        </div>
+        </Router>
       </div>
-      <section />
     </div>
   );
 }
