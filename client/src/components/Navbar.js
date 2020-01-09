@@ -8,6 +8,7 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
+import Carousel from "react-bootstrap/Carousel";
 import Registration from "./Registration";
 import Login from "./Login";
 
@@ -26,7 +27,7 @@ function Dashboard() {
     </div>
   );
 }
-function Container() {
+function Navbar() {
   return (
     <div>
       <div class="container">
@@ -70,7 +71,6 @@ function Container() {
                   </NavLink>
                 </li>
                 <li>
-                  <br></br>
                   <NavLink className="Nav_link" to="/registration">
                     SignUp
                   </NavLink>
@@ -104,7 +104,7 @@ function Container() {
               <Route path="/post">
                 <Post />
               </Route>
-              <Route path="/signup">
+              <Route path="/registration">
                 <Registration />
               </Route>
               <Route path="/login">
@@ -118,4 +118,4 @@ function Container() {
   );
 }
 
-export default Container;
+export default Navbar;

@@ -9,9 +9,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <Gallery />
-      <Container />
-      <Footer />
+      <Navbar />
     </>
   );
 }
