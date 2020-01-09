@@ -1,13 +1,13 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
+import { Carousel } from "react-bootstrap/Carousel";
 
-function MyCarousel() {
+function Carousel() {
   return (
     <Carousel>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
+          className="d-block w-50"
+          src="https://www.biography.com/.image/t_share/MTE5NTU2MzE2NDYyMTU1Mjc1/bill-murray-9542510-1-402.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -17,8 +17,8 @@ function MyCarousel() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
+          className="d-block w-50"
+          src="https://vsco.co/zakaryjullot/media/58ee51c982b72d066055fa04"
           alt="Second slide"
         />
 
@@ -29,8 +29,8 @@ function MyCarousel() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+          className="d-block w-50"
+          src="https://vsco.co/zakaryjullot/media/5536dd5405561583188b457e"
           alt="Third slide"
         />
 
@@ -45,4 +45,4 @@ function MyCarousel() {
   );
 }
 
-export default MyCarousel;
+export default Carousel;
