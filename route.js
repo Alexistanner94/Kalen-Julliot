@@ -26,13 +26,25 @@ registrationRoutes.route("/login").post(function(req, res) {
       bcrypt
         .compare(req.body.password, user.password)
         .then(passwordMatch =>
-          passwordMatch ? res.sendStatus(200) : res.sendStatus(204)
+          passwordMatch ? res.status(200).json(user) : res.sendStatus(204)
         );
     }
   });
 });
 
 // Post route
+registrationRoutes.route("/post").post(function(req, res) {
+  let post = new Post(req.body);
+  post
+    .save()
+    .then(reg => {
+      return res.redirect("/dashboard");
+      res.sendStatus(200);
+    })
+    .catch(err => {
+      res.status(400).send("Failed to store to database");
+    });
+});
 
 // Username validation Router
 registrationRoutes.route("/validateUsername").post(function(req, res) {

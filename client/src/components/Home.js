@@ -3,7 +3,7 @@ import React from "react";
 function Home() {
   return (
     <div>
-        <header class="masthead text-center text-white">
+      {/* <header class="masthead text-center text-white">
         <div class="masthead-content">
           <div class="container"></div>
         </div>
@@ -11,7 +11,7 @@ function Home() {
         <div class="bg-circle-2 bg-circle"></div>
         <div class="bg-circle-3 bg-circle"></div>
         <div class="bg-circle-4 bg-circle"></div>
-      </header>
+      </header> */}
 
       <section />
       <div class="container">
