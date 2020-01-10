@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Registration from "./Registration";
 import Login from "./Login";
+import Gallery from "./Gallery";
 
 function About() {
   return (
@@ -69,6 +70,9 @@ function Container() {
                     Post Arts
                   </NavLink>
                 </li>
+                <NavLink className="Nav_link" to="/post">
+                  Gallery
+                </NavLink>
                 <li>
                   <br></br>
                   <NavLink className="Nav_link" to="/registration">

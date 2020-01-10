@@ -9,7 +9,7 @@ import {
   REGISTRATION_MESSAGE,
   ERROR_IN_REGISTRATION
 } from "../MessageBundle";
-import axios from "axios";
+import { Image } from "cloudinary-react";
 
 export default class Post extends Component {
   constructor(props) {
@@ -21,42 +21,74 @@ export default class Post extends Component {
       price: "",
       phone_number: "",
       image: "",
+      file: null,
       post: false,
-      error: false
+      error: false,
+      upload: false
     };
+
+    // Defined as local variable
+    this.widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "dk6qbnew3",
+        uploadPreset: "wcd5iji1"
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          console.log("Done! Here is the image info: ", result.info);
+          this.setState({
+            image: result.info.secure_url,
+            upload: true
+          });
+        }
+      }
+    );
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleOnChangeTitle = e => {
+  handleChange(selectorFiles) {
+    console.log(selectorFiles);
+    this.setState({
+      file: selectorFiles[0]
+    });
+  }
+
+  handleOnChangeTitle = (e) => {
     this.setState({
       title: e.target.value
     });
   };
 
-  handleOnChangeDescription = e => {
+  handleOnChangeDescription = (e) => {
     this.setState({
       description: e.target.value
     });
   };
 
-  handleOnChangePrice = e => {
+  handleOnChangePrice = (e) => {
     this.setState({
       price: e.target.value
     });
   };
 
-  handleOnChangePhoneNumber = e => {
+  handleOnChangePhoneNumber = (e) => {
     this.setState({
       phone_number: e.target.value
     });
   };
 
-  handleOnChangeImage = e => {
-    this.setState({
-      image: e.target.value
-    });
+  handleOnChangeFile = (e) => {
+    let file_name = e.target.files[0].name;
+    console.log(file_name);
+    var path = (window.URL || window.webkitURL).createObjectURL(
+      e.target.files[0]
+    );
+    console.log("path", path);
+    //this.handleChange(e.target.files)
   };
 
-  onSubmit = async e => {
+  onSubmit = async (e) => {
     e.preventDefault();
     const data = {
       title: this.state.title,
@@ -67,6 +99,7 @@ export default class Post extends Component {
     };
 
     const postStatus = await PostRegistration(data);
+    console.log("postResult", postStatus.data);
     if (postStatus === 200) {
       this.setState({
         title: "",
@@ -74,13 +107,27 @@ export default class Post extends Component {
         price: "",
         phone_number: "",
         image: "",
-        error: false
+        file: "",
+        post: true,
+        error: false,
+        upload: true
       });
     } else
       this.setState({
         error: true,
-        post: false
+        post: false,
+        upload: false
       });
+  };
+
+  showWidget = (widget) => {
+    this.widget.open();
+  };
+
+  checkUploadResult = (resultEvent) => {
+    if (resultEvent.event === "success") {
+      console.log(resultEvent.info.secure_url);
+    }
   };
 
   render() {
@@ -88,6 +135,9 @@ export default class Post extends Component {
     if (this.state.post) {
       return <Redirect to={{ pathname: "/dashboard" }} />;
     }
+    const divStyle = {
+      color: "green"
+    };
     return (
       <div className="Registration">
         <h1>{POST_FIELDS.POST_HEADING}</h1>
@@ -133,17 +183,22 @@ export default class Post extends Component {
                 required
               />
             </div>
-            <div className="fields">
-              <p>File Upload</p>
-              <input
-                type="text"
-                value={this.state.image}
-                name="image"
-                onChange={this.handleOnChangeImage}
-                required
-              />
-            </div>
-
+            {this.state.upload ? null : (
+              <div>
+                <button
+                  id="upload_widget"
+                  class="cloudinary-button"
+                  onClick={this.showWidget}
+                >
+                  Upload files
+                </button>
+              </div>
+            )}
+            {this.state.upload ? (
+              <div style={divStyle}>
+                <p>Image successsfuly uploaded</p>
+              </div>
+            ) : null}
             <br></br>
             <div className="buttons">
               <button type="submit" className="btn btn-primary">
