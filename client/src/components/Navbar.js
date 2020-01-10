@@ -11,6 +11,8 @@ import {
 import Carousel from "react-bootstrap/Carousel";
 import Registration from "./Registration";
 import Login from "./Login";
+import Gallery from "./Gallery";
+import Dashboard from "./Dashboard";
 
 function About() {
   return (
@@ -20,13 +22,6 @@ function About() {
   );
 }
 
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}
 function Navbar() {
   return (
     <div>
@@ -71,6 +66,11 @@ function Navbar() {
                   </NavLink>
                 </li>
                 <li>
+                  <NavLink className="Nav_link" to="/Gallery">
+                    Gallery
+                  </NavLink>
+                </li>
+                <li>
                   <NavLink className="Nav_link" to="/registration">
                     SignUp
                   </NavLink>
@@ -103,6 +103,9 @@ function Navbar() {
               </Route>
               <Route path="/post">
                 <Post />
+              </Route>
+              <Route path="/gallery">
+                <Gallery />
               </Route>
               <Route path="/registration">
                 <Registration />

@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
 
 // collection and schema for Post Art works
 let Post = new Schema(
   {
-    tittle: {
+    title: {
       type: String,
       required: true,
       trim: true
@@ -33,6 +33,6 @@ let Post = new Schema(
   {
     collection: "Post"
   }
-);
+)
 
-module.exports = mongoose.model("Post", Post);
+module.exports = mongoose.model("Post", Post)
