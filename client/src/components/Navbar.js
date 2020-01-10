@@ -14,8 +14,23 @@ import Login from "./Login";
 
 function About() {
   return (
-    <div>
-      <h2>About</h2>
+    <div class="about">
+      <p>
+        <h3 class=" heading"> Visual Arts Of Kalen & Julliot </h3>
+        The inspiration for Visuals Arts of Kalen &Julliot came from two local
+        artists, Kalen ,originally for ( Insert location here ) , and Zakary
+        Julliot, originally from Haiti. These are two very talented artists who
+        specialize in several different genres of art like paintings, drawings,
+        and photography. These local Artists are well known in their communities
+        for their empowering photography and their amazingly detailed paintings.
+        Seeing the recognition they received from their community, they wanted
+        showcase their work to other art lovers all over the world. Visual Arts
+        of Kalen & Julliot is a Platform that will allow any Artist to showcase
+        their art, globally, and receive real feedback from other artists and
+        art lovers all over the world. If you are an aspiring artist, and want
+        to get real advice and helpful tips on your are work Click Here ( hyper
+        link to Sign Up).{" "}
+      </p>
     </div>
   );
 }
