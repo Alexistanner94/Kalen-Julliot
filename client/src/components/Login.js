@@ -24,19 +24,19 @@ export default class Login extends Component {
     };
   }
 
-  handleOnChangeUserName = e => {
+  handleOnChangeUserName = (e) => {
     this.setState({
       user_name: e.target.value
     });
   };
 
-  handleOnChangePassword = e => {
+  handleOnChangePassword = (e) => {
     this.setState({
       password: e.target.value
     });
   };
 
-  onSubmit = async e => {
+  onSubmit = async (e) => {
     const data = {
       user_name: this.state.user_name,
       password: this.state.password
